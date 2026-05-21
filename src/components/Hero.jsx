@@ -18,6 +18,19 @@ export default function Hero() {
               I'm Sobhika <span className="inline-block animate-wave origin-bottom-right">👋</span><br />
               <span className="text-3xl md:text-5xl text-text-muted mt-4 block font-medium">DSA Enthusiast | Full Stack Developer</span>
             </h1>
+            
+            <div className="pt-8">
+              <a 
+                href="/resume.pdf" 
+                download="Sobhika_Resume.pdf"
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white font-bold rounded-full hover:bg-primaryHover transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>
+                Download Resume
+              </a>
+            </div>
           </motion.div>
         </div>
 
