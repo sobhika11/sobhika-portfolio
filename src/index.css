@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-text-main font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .minimal-card {
+    @apply bg-surface border border-border-main rounded-xl shadow-md hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300;
+  }
+  
+  .outlined-button {
+    @apply inline-flex items-center justify-center px-6 py-2.5 font-medium text-text-main bg-surface border border-border-main rounded-full hover:bg-surfaceHover hover:border-primaryHover hover:text-primary transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surfaceHover rounded-full hover:bg-border-main;
+}
+
+/* Faint Watermark Text */
+.watermark-text {
+  font-size: 15rem;
+  font-weight: 800;
+  color: #111A2E; /* same as surface color to blend into background */
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
