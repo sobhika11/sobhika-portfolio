@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base font-medium transition-colors ${
                   isActive ? 'text-primary font-bold' : 'text-text-muted hover:text-primary'
                 }`}
               >
@@ -86,7 +86,7 @@ export default function Navbar() {
                     key={link.name}
                     to={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-lg font-medium transition-colors ${
+                    className={`text-xl font-medium transition-colors ${
                       isActive ? 'text-primary font-bold' : 'text-text-muted hover:text-primary'
                     }`}
                   >

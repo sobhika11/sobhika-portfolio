@@ -14,9 +14,9 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="w-full max-w-lg space-y-6"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-text-main tracking-tight leading-[1.1]">
+            <h1 className="text-3xl md:text-5xl font-bold text-text-main tracking-tight leading-[1.1]">
               I'm Sobhika <span className="inline-block animate-wave origin-bottom-right">👋</span><br />
-              <span className="text-3xl md:text-5xl text-text-muted mt-4 block font-medium">DSA Enthusiast | Full Stack Developer</span>
+              <span className="text-xl md:text-2xl text-text-muted mt-4 block font-medium">DSA Enthusiast | Full Stack Developer</span>
             </h1>
             
             <div className="pt-8">

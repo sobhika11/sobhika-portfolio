@@ -4,10 +4,45 @@ import { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message feature is not hooked up to a backend yet, but thanks for checking!");
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // Replace this with your actual Web3Forms access key
+          access_key: "YOUR_ACCESS_KEY_HERE", 
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   return (
@@ -17,7 +52,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-text-main"
+          className="text-3xl md:text-4xl font-bold text-text-main"
         >
           Get In Touch
         </motion.h2>
@@ -105,9 +140,26 @@ export default function Contact() {
                 placeholder="Hello, I'd like to talk about..."
               />
             </div>
-            <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 font-bold text-white bg-primary rounded-lg hover:bg-[#E65200] transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Send Message
-              <Send className="w-4 h-4" />
+            
+            {submitStatus === 'success' && (
+              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-500 rounded-lg text-sm font-medium">
+                Message sent successfully! I will get back to you soon.
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-lg text-sm font-medium">
+                Something went wrong. Please try emailing me directly.
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 font-bold text-white bg-primary rounded-lg hover:bg-primaryHover transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {!isSubmitting && <Send className="w-4 h-4" />}
             </button>
           </form>
         </motion.div>

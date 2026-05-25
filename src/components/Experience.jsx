@@ -6,7 +6,7 @@ const experiences = [
     role: 'Full Stack Developer',
     company: 'LearnLogicify Technologies LLP, Coimbatore',
     date: '1 Month',
-    description: 'Developed responsive web interfaces using HTML, CSS, JavaScript, and Bootstrap, improving UI consistency and mobile performance.',
+    description: 'Developed responsive web interfaces using HTML, CSS, JavaScript, Bootstrap, and React, improving UI consistency and mobile performance. Additionally, explored and implemented essential backend concepts.',
   }
 ];
 
@@ -18,7 +18,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-text-main"
+          className="text-3xl md:text-4xl font-bold text-text-main"
         >
           Internship
         </motion.h2>

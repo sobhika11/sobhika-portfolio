@@ -40,7 +40,7 @@ export default function Certifications() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-text-main"
+          className="text-3xl md:text-4xl font-bold text-text-main"
         >
           Certifications
         </motion.h2>
@@ -61,7 +61,7 @@ export default function Certifications() {
                 <Award className="w-6 h-6" />
               </div>
               {cert.link && (
-                <a href={cert.link} className="text-text-muted hover:text-primary transition-colors">
+                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors">
                   <ExternalLink className="w-5 h-5" />
                 </a>
               )}

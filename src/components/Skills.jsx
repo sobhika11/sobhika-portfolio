@@ -10,7 +10,7 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: <Server className="w-6 h-6 text-primary" />,
-    skills: ['Node.js', 'Express.js', 'Java', 'Python', 'C', 'REST API', 'JWT OAuth'],
+    skills: ['Node.js', 'Express.js', 'Java', 'Python', 'C', 'REST API', 'JWT', 'OAuth'],
   },
   {
     title: 'Databases',
@@ -23,9 +23,9 @@ const skillCategories = [
     skills: ['Git', 'GitHub', 'VS Code', 'Maven', 'Postman'],
   },
   {
-    title: 'Competitive',
+    title: 'Core Fundamentals',
     icon: <Trophy className="w-6 h-6 text-primary" />,
-    skills: ['Data Structures', 'Algorithms', 'Problem Solving', 'OOPs'],
+    skills: ['Data Structures and Algorithms', 'Problem Solving', 'OOPS', 'Operating system', 'Computer Networks', 'DBMS'],
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-text-main"
+          className="text-3xl md:text-4xl font-bold text-text-main"
         >
           Skills
         </motion.h2>

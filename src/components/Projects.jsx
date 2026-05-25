@@ -4,11 +4,11 @@ import { ExternalLink, FolderGit2 } from 'lucide-react';
 const projects = [
   {
     title: 'Graph-Based Detection System',
-    description: 'Built a graph-based phishing detection system using Neo4j and FastAPI to identify malicious URL relationships, suspicious hosting patterns, and coordinated phishing activity.',
+    description: 'Detects URL using graph-based analysis and infrastructure-level feature extraction to identify malicious websites. I implemented asynchronous scanning workflows to improve detection speed and efficiently process multiple URLs concurrently. My phishing system reduces false positives by combining multiple phishing indicators such as suspicious redirects, abnormal URL structures, and insecure configurations.',
     tech: ['Neo4j', 'FastAPI', 'MERN Stack', 'Python'],
     year: '2026',
     github: 'https://github.com/sobhika11/Phising-detection-System',
-    demo: '#',
+    demo: 'https://phising-detection-system.vercel.app/',
   },
   {
     title: 'Petcare Website',
@@ -16,7 +16,7 @@ const projects = [
     tech: ['MongoDB', 'Express', 'React', 'Node.js'],
     year: '2024',
     github: 'https://github.com/sobhika11/petcare',
-    demo: '#',
+    demo: 'https://petcare-5.onrender.com/',
   },
   {
     title: 'Fitness Tracker',
@@ -52,7 +52,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-text-main"
+          className="text-3xl md:text-4xl font-bold text-text-main"
         >
           Projects
         </motion.h2>
@@ -71,10 +71,10 @@ export default function Projects() {
             <div className="flex justify-between items-start mb-8 relative z-10">
               <FolderGit2 className="w-10 h-10 text-primary" />
               <div className="flex gap-4">
-                <a href={project.github} className="text-text-muted hover:text-primary hover:scale-110 transition-all">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary hover:scale-110 transition-all">
                   <GithubIcon />
                 </a>
-                <a href={project.demo} className="text-text-muted hover:text-primary hover:scale-110 transition-all">
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary hover:scale-110 transition-all">
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
