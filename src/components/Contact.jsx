@@ -66,7 +66,7 @@ export default function Contact() {
           className="md:col-span-2 space-y-6"
         >
           <p className="text-text-muted text-lg leading-relaxed mb-8">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            Currently exploring opportunities in backend development and open to technical discussions, collaborations, and interesting projects
           </p>
           
           <div className="minimal-card p-6 flex items-start gap-4">
@@ -112,7 +112,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full bg-surface border border-border-main rounded-lg px-4 py-3 text-text-main placeholder:text-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-medium"
-                  placeholder="John Doe"
+                  placeholder="Name"
                 />
               </div>
               <div className="space-y-2">
